@@ -3468,8 +3468,8 @@ bool LLParser::parseValID(ValID &ID, PerFunctionState *PFS) {
         parseToken(lltok::StringConstant, "expected constraint string"))
       return true;
     ID.StrVal2 = Lex.getStrVal();
-    ID.UIntVal = unsigned(HasSideEffect) | (unsigned(AlignStack)<<1) |
-      (unsigned(AsmDialect)<<2);
+    ID.UIntVal = unsigned(HasSideEffect) | (unsigned(AlignStack) << 1) |
+                 (unsigned(AsmDialect) << 2);
     ID.Kind = ValID::t_InlineAsm;
     return false;
   }

@@ -8396,7 +8396,6 @@ void SelectionDAGBuilder::visitInlineAsm(const CallBase &Call) {
     ExtraInfo.update(T);
   }
 
-
   // We won't need to flush pending loads if this asm doesn't touch
   // memory and is nonvolatile.
   SDValue Flag, Chain = (HasSideEffect) ? getRoot() : DAG.getRoot();

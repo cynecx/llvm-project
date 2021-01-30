@@ -2554,8 +2554,8 @@ void CodeGenFunction::EmitAsmStmt(const AsmStmt &S) {
   llvm::InlineAsm::AsmDialect AsmDialect = isa<MSAsmStmt>(&S) ?
     llvm::InlineAsm::AD_Intel : llvm::InlineAsm::AD_ATT;
   llvm::InlineAsm *IA =
-    llvm::InlineAsm::get(FTy, AsmString, Constraints, HasSideEffect,
-                         /* IsAlignStack */ false, AsmDialect);
+      llvm::InlineAsm::get(FTy, AsmString, Constraints, HasSideEffect,
+                           /* IsAlignStack */ false, AsmDialect);
   std::vector<llvm::Value*> RegResults;
   if (IsGCCAsmGoto) {
     llvm::CallBrInst *Result =
